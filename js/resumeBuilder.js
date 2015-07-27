@@ -27,7 +27,7 @@ var message = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
 $('#header').append(picture);
 $('#header').append(message);
 
-		// var skills = HTMLskills.replace('%data', bio.skills); // I am trying to put the bio.skill in HTML skills 
+		// var skills = HTMLskills.replace('%data', bio.skills); // I am trying to put the bio.skill in HTML skills
 		// 													  // because that is where the jquery skills li (structured list) market is
 
 		// $('#header').append(HTMLskills);	// I tried to append HTMLskills to header
@@ -72,7 +72,7 @@ $('#topContacts').append(github);
 var twitter = HTMLtwitter.replace('%data%', bio.contacts.twitter);
 $('#topContacts').append(twitter);
 
-		// for var _location : i had to use _location instead of var location because the html was crashing. 
+		// for var _location : i had to use _location instead of var location because the html was crashing.
 		// dev console seems to say that location is already defined somewhere.
 
 var _location = HTMLlocation.replace('%data%', bio.contacts.location);
@@ -104,10 +104,10 @@ function displayWork() {
 	var formattedTitle = HTMLworkTitle.replace('%data%', work.jobs[job].title);
 	var formattedEmployerTitle = formattedEmployer + formattedTitle
 	// this concantenates formattedEmployer and formattedTitle so the show up together on the same line.
-		$('.work-entry:last').append(formattedEmployerTitle); 
+		$('.work-entry:last').append(formattedEmployerTitle);
 		// the "." in $('.work-entry:last') signifies that work-entry is a class
 	var formattedLocation = HTMLworkLocation.replace('%data%', work.jobs[job].location);
-		$('.work-entry:last').append(formattedLocation);	
+		$('.work-entry:last').append(formattedLocation);
 	var formattedDates = HTMLworkDates.replace('%data%', work.jobs[job].dates);
 		$('.work-entry:last').append(formattedDates);
 	var formattedDescription = HTMLworkDescription.replace('%data%', work.jobs[job].description);
@@ -125,7 +125,7 @@ displayWork();
 // 	 }
 // }
 // function locationizer(work_obj) {
-    
+
 //     var locationArray = [];
 
 // 	for (job in work_obj.jobs) {
@@ -142,19 +142,19 @@ displayWork();
 // 	var formattedTitle = HTMLworkTitle.replace('%data%', work.jobs[job].title);
 // 	var formattedEmployerTitle = formattedEmployer + formattedTitle
 // 	// this concantenates formattedEmployer and formattedTitle so the show up together on the same line.
-// 		$('.work-entry:last').append(formattedEmployerTitle); 
+// 		$('.work-entry:last').append(formattedEmployerTitle);
 // 		// the "." in $('.work-entry:last') signifies that work-entry is a class
 // 	var formattedLocation = HTMLworkLocation.replace('%data%', work.jobs[job].location);
-// 		$('.work-entry:last').append(formattedLocation);	
+// 		$('.work-entry:last').append(formattedLocation);
 // 	var formattedDates = HTMLworkDates.replace('%data%', work.jobs[job].dates);
 // 		$('.work-entry:last').append(formattedDates);
 // 	var formattedDescription = HTMLworkDescription.replace('%data%', work.jobs[job].description);
 // 		$('.work-entry:last').append(formattedDescription);
-		
 
-// work.display = function() {					
+
+// work.display = function() {
 // 	for (job in work.jobs) {
-// 		$('#workExperience').append(HTMLworkStart); 
+// 		$('#workExperience').append(HTMLworkStart);
 // 		var formattedEmployer = HTMLworkEmployer.replace('%data%', work.jobs[job].employer);
 // 		$('.work-entry:last').append(formattedEmployer);
 
@@ -180,19 +180,19 @@ var projects = {
 		"title"    : "CEO",
 		"dates"    : "2000-Present",
 		"description" : "Tech and Solar applications",
-		"images"   : ["images/DigiLab-LOGO.jpg", "images/AIC-LOGO.jpg"]
+		"images"   : ["images/DigiLab-LOGO-200-200.jpg"]
 	},
 	{
 		"title"    : "CEO",
 		"dates"    : "2000-Present",
 		"description" : "Tech and Solar applications",
-		"images"   : ["images/DigiLab-LOGO.jpg", "images/AIC-LOGO.jpg"]
+		"images"   : ["images/AIC-LOGO-200-200.jpg"]
 	}]
 };
 
-projects.display = function() {					
+projects.display = function() {
 	for (project in projects.projects) {
-		$('#projects').append(HTMLprojectStart); 
+		$('#projects').append(HTMLprojectStart);
 		var formattedTitle = HTMLprojectTitle.replace('%data%', projects.projects[project].title);
 		$('.project-entry:last').append(formattedTitle);
 
@@ -222,7 +222,7 @@ var education = {
 		"majors" : ["Hustle Philosophy", "Art Philosophy", "Busines Philosophy"],
 		"dates" : "1992-1995",
 		"url"   : "www.ufl.edu"
-		
+
 	},
 	{
 		"name" : "Hard Knocks Law School",
@@ -232,7 +232,7 @@ var education = {
 		"dates" : "1996-1999",
 		"url"   : "www.howard.edu"
 	}],
-	
+
 	"onlineCourses" : [
 		{
 			"title" : "Javascript Basics",
@@ -249,9 +249,9 @@ var education = {
 	]
 };
 
-education.display = function() {					
+education.display = function() {
 	for (ed in education.schools) {
-		$('#education').append(HTMLschoolStart); 
+		$('#education').append(HTMLschoolStart);
 		var formattedName = HTMLschoolName.replace('%data%', education.schools[ed].name);
 		$('.education-entry:last').append(formattedName);
 
@@ -294,7 +294,7 @@ function inName() {
 	name[0]=name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
 	// console.log(name[0]);
 	return name[0] +" "+ name[1];
-	
+
 }
 var name = $('#name').text();
 
