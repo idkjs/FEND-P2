@@ -17,8 +17,8 @@ bio.display = function() {
  var role = HTMLheaderRole.replace('%data%', bio.role);
  var name = HTMLheaderName.replace('%data%', bio.name);
 
- $('#header').prepend(role);  // the # gets the html id in the .html file and puts var role there.
- $('#header').prepend(name);   // $ is how jquery commands start.
+ $('#header').prepend(role);
+ $('#header').prepend(name);
 
  var picture = HTMLbioPic.replace('%data%', bio.pictureUrl);
  var message = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
@@ -26,36 +26,35 @@ bio.display = function() {
  $('#header').append(picture);
  $('#header').append(message);
 
-if (bio.skills.length > 0) {
  $('#header').append(HTMLskillsStart);
- var formattedSkill = HTMLskills.replace('%data%', bio.skills[0]);
+ var len = bio.skills.length;
+ for (var i = 0; i < len; i++) {
+ var formattedSkill = HTMLskills.replace('%data%', bio.skills[i]);
  $('#skills').append(formattedSkill);
-
- var formattedSkill = HTMLskills.replace('%data%', bio.skills[1]);
- $('#skills').append(formattedSkill);
-
- var formattedSkill = HTMLskills.replace('%data%', bio.skills[2]);
- $('#skills').append(formattedSkill);
-
- var formattedSkill = HTMLskills.replace('%data%', bio.skills[3]);
- $('#skills').append(formattedSkill);
+ }
 
  var mobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
  $('#topContacts').append(mobile);
+ $('#footerContacts').append(mobile);
 
  var email = HTMLemail.replace('%data%', bio.contacts.email);
  $('#topContacts').append(email);
+ $('#footerContacts').append(email);
 
  var github = HTMLgithub.replace('%data%', bio.contacts.github);
  $('#topContacts').append(github);
+ $('#footerContacts').append(github);
 
  var twitter = HTMLtwitter.replace('%data%', bio.contacts.twitter);
  $('#topContacts').append(twitter);
+ $('#footerContacts').append(twitter);
 
  var _location = HTMLlocation.replace('%data%', bio.contacts.location);
  $('#topContacts').append(_location);
- }
+ $('#footerContacts').append(_location);
+
 }
+
 bio.display();
 
 var work = {
@@ -126,7 +125,6 @@ projects.display = function() {
 
     var formattedDescription = HTMLprojectDescription.replace('%data%', projects.projects[i].description);
     $('.project-entry:last').append(formattedDescription);
-
     //iterate through images in project
     if (projects.projects[i].images.length > 0) {
       var count = projects.projects[i].images.length;
@@ -177,9 +175,10 @@ var education = {
 };
 
 education.display = function() {
+ $('#education').append(HTMLschoolStart);
  var len = education.schools.length;
   for (var i = 0; i < len; i++) {
-  $('#education').append(HTMLschoolStart);
+
   var formattedName = HTMLschoolName.replace('%data%', education.schools[i].name);
   $('.education-entry:last').append(formattedName);
 
@@ -194,11 +193,12 @@ education.display = function() {
 
   var formattedMajor = HTMLschoolMajor.replace('%data%', education.schools[i].majors);
   $('.education-entry:last').append(formattedMajor);
-
+}
   if (education.onlineCourses.length > 0) {
-      var count = education.onlineCourses[i].length;
+    $('.education-entry:last').append(HTMLonlineClasses);
+    var count = education.onlineCourses.length;
 	  for (var i = 0; i < count; i++) {
-	  $('.education-entry:last').append(HTMLonlineClasses);
+
 	  var formattedonlineTitle = HTMLonlineTitle.replace('%data%', education.onlineCourses[i].title);
 	  $('.education-entry:last').append(formattedonlineTitle);
 
@@ -211,11 +211,10 @@ education.display = function() {
 	  var formattedonlineURL = HTMLonlineURL.replace('%data%', education.onlineCourses[i].url);
 	  $('.education-entry:last').append(formattedonlineURL);
 	  }
- }
-}};
-$('#education').append(education.display);
-// education.display();
+   }
+  }
 
+$('#education').append(education.display);
 
 function inName() {
  var name = window.name;
@@ -234,6 +233,4 @@ $('#main').append(internationalizeButton);
 
 $('#mapDiv').append(googleMap);
 
-
-// $('#main').append(googleMap);
 

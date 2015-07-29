@@ -22,8 +22,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
   <!-- Load the page styles. -->
   <link href="css/style.css" rel="stylesheet" type="text/css">
-  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-  <link rel="import" href="bower_components/paper-toggle-button/paper-toggle-button.html">
+
 
   <!--
   jQuery is a common JavaScript library for reading and making changes to the
@@ -50,6 +49,8 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
   <meta name="viewport" content="width=device-width">
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"> async</script>
+  <link rel="import" href="bower_components/paper-toggle-button/paper-toggle-button.html">
 </head>
 <body unresolved>
   <div id="main">
@@ -78,9 +79,8 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
       <h2>Where I've Lived and Worked</h2>
     </div>
     <div id="letsConnect" class='dark-gray'>
-      <h2 class='orange center-text'>Like My Resume?
-       YES<paper-toggle-button></paper-toggle-button>NO</h2>
-        <ul id="footerContacts" class="flex-box">
+      <h2 class='orange center-text'>Like My Resume? YES<paper-toggle-button></paper-toggle-button>NO</h2>
+      <ul id="footerContacts" class="flex-box">
 
         <!-- <span>Yes</span><paper-toggle-button></paper-toggle-button><span>No</span> -->
       </ul>
